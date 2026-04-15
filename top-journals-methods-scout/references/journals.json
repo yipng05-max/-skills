@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "description": "全球人文社科顶刊清单（分学科），用于 OpenAlex ISSN 检索。last_updated: 2026-04",
+    "selection_criteria": "各学科公认顶刊 + 方法论期刊 + AI/数字社科交叉期刊 + 数字人文阵地。覆盖广度优先于精度。"
+  },
+  "disciplines": {
+    "sociology": [
+      {"name": "American Journal of Sociology", "abbr": "AJS", "issn": ["0002-9602", "1537-5390"], "tier": "top"},
+      {"name": "American Sociological Review", "abbr": "ASR", "issn": ["0003-1224", "1939-8271"], "tier": "top"},
+      {"name": "Social Forces", "abbr": "SF", "issn": ["0037-7732", "1534-7605"], "tier": "top"},
+      {"name": "Theory and Society", "abbr": "T&S", "issn": ["0304-2421", "1573-7853"], "tier": "top"},
+      {"name": "Annual Review of Sociology", "abbr": "ARS", "issn": ["0360-0572", "1545-2115"], "tier": "review"},
+      {"name": "Sociological Theory", "abbr": "ST", "issn": ["0735-2751", "1467-9558"], "tier": "top"}
+    ],
+    "political_science": [
+      {"name": "American Political Science Review", "abbr": "APSR", "issn": ["0003-0554", "1537-5943"], "tier": "top"},
+      {"name": "American Journal of Political Science", "abbr": "AJPS", "issn": ["0092-5853", "1540-5907"], "tier": "top"},
+      {"name": "World Politics", "abbr": "WP", "issn": ["0043-8871", "1086-3338"], "tier": "top"},
+      {"name": "Comparative Political Studies", "abbr": "CPS", "issn": ["0010-4140", "1552-3829"], "tier": "top"}
+    ],
+    "psychology": [
+      {"name": "Psychological Science", "abbr": "PS", "issn": ["0956-7976", "1467-9280"], "tier": "top"},
+      {"name": "Journal of Personality and Social Psychology", "abbr": "JPSP", "issn": ["0022-3514", "1939-1315"], "tier": "top"},
+      {"name": "Psychological Methods", "abbr": "PM", "issn": ["1082-989X", "1939-1463"], "tier": "methods"}
+    ],
+    "communication": [
+      {"name": "Journal of Communication", "abbr": "JoC", "issn": ["0021-9916", "1460-2466"], "tier": "top"},
+      {"name": "New Media & Society", "abbr": "NM&S", "issn": ["1461-4448", "1461-7315"], "tier": "top"},
+      {"name": "Big Data & Society", "abbr": "BD&S", "issn": ["2053-9517"], "tier": "ai_intersect"},
+      {"name": "Information, Communication & Society", "abbr": "iCS", "issn": ["1369-118X", "1468-4462"], "tier": "top"}
+    ],
+    "management_organization": [
+      {"name": "Administrative Science Quarterly", "abbr": "ASQ", "issn": ["0001-8392", "1930-3815"], "tier": "top"},
+      {"name": "Academy of Management Journal", "abbr": "AMJ", "issn": ["0001-4273", "1948-0989"], "tier": "top"},
+      {"name": "Organization Science", "abbr": "OrgSci", "issn": ["1047-7039", "1526-5455"], "tier": "top"},
+      {"name": "Academy of Management Review", "abbr": "AMR", "issn": ["0363-7425", "1930-3807"], "tier": "top"},
+      {"name": "Organization Studies", "abbr": "OS", "issn": ["0170-8406", "1741-3044"], "tier": "top"}
+    ],
+    "economics": [
+      {"name": "Quarterly Journal of Economics", "abbr": "QJE", "issn": ["0033-5533", "1531-4650"], "tier": "top"},
+      {"name": "American Economic Review", "abbr": "AER", "issn": ["0002-8282", "1944-7981"], "tier": "top"},
+      {"name": "Journal of Economic Perspectives", "abbr": "JEP", "issn": ["0895-3309", "1944-7965"], "tier": "top"}
+    ],
+    "anthropology": [
+      {"name": "American Anthropologist", "abbr": "AA", "issn": ["0002-7294", "1548-1433"], "tier": "top"},
+      {"name": "Current Anthropology", "abbr": "CA", "issn": ["0011-3204", "1537-5382"], "tier": "top"},
+      {"name": "Cultural Anthropology", "abbr": "CulA", "issn": ["0886-7356", "1548-1360"], "tier": "top"}
+    ],
+    "education": [
+      {"name": "American Educational Research Journal", "abbr": "AERJ", "issn": ["0002-8312", "1935-1011"], "tier": "top"},
+      {"name": "Review of Educational Research", "abbr": "RER", "issn": ["0034-6543", "1935-1046"], "tier": "review"}
+    ],
+    "history": [
+      {"name": "American Historical Review", "abbr": "AHR", "issn": ["0002-8762", "1937-5239"], "tier": "top"},
+      {"name": "Past & Present", "abbr": "P&P", "issn": ["0031-2746", "1477-464X"], "tier": "top"}
+    ],
+    "linguistics": [
+      {"name": "Language", "abbr": "Lang", "issn": ["0097-8507", "1535-0665"], "tier": "top"},
+      {"name": "Applied Linguistics", "abbr": "AL", "issn": ["0142-6001", "1477-450X"], "tier": "top"}
+    ],
+    "geography": [
+      {"name": "Annals of the American Association of Geographers", "abbr": "AAAG", "issn": ["2469-4452", "2469-4460"], "tier": "top"},
+      {"name": "Progress in Human Geography", "abbr": "PHG", "issn": ["0309-1325", "1477-0288"], "tier": "top"}
+    ],
+    "methods_journals": [
+      {"name": "Sociological Methods & Research", "abbr": "SMR", "issn": ["0049-1241", "1552-8294"], "tier": "methods"},
+      {"name": "Quality & Quantity", "abbr": "Q&Q", "issn": ["0033-5177", "1573-7845"], "tier": "methods"},
+      {"name": "Qualitative Inquiry", "abbr": "QI", "issn": ["1077-8004", "1552-7565"], "tier": "methods"},
+      {"name": "Field Methods", "abbr": "FM", "issn": ["1525-822X", "1552-3969"], "tier": "methods"}
+    ],
+    "ai_social_intersection": [
+      {"name": "Big Data & Society", "abbr": "BD&S", "issn": ["2053-9517"], "tier": "ai_intersect"},
+      {"name": "Journal of the Association for Information Science and Technology", "abbr": "JASIST", "issn": ["2330-1635", "2330-1643"], "tier": "ai_intersect"},
+      {"name": "Nature Human Behaviour", "abbr": "NHB", "issn": ["2397-3374"], "tier": "ai_intersect"},
+      {"name": "Journal of Computational Social Science", "abbr": "JCSS", "issn": ["2432-2717", "2432-2725"], "tier": "ai_intersect"},
+      {"name": "EPJ Data Science", "abbr": "EPJDS", "issn": ["2193-1127"], "tier": "ai_intersect"}
+    ],
+    "digital_humanities": [
+      {"name": "Digital Scholarship in the Humanities", "abbr": "DSH", "issn": ["2055-7671", "2055-768X"], "tier": "dh"},
+      {"name": "Journal of Cultural Analytics", "abbr": "CA", "issn": ["2371-4549"], "tier": "dh"},
+      {"name": "Digital Humanities Quarterly", "abbr": "DHQ", "issn": ["1938-4122"], "tier": "dh"}
+    ]
+  }
+}
