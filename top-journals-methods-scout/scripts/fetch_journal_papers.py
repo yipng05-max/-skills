@@ -24,10 +24,12 @@ from pathlib import Path
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
+from http.client import IncompleteRead, RemoteDisconnected
 
 OPENALEX_API = "https://api.openalex.org/works"
 PER_PAGE = 200
 SLEEP_BETWEEN = 0.15  # 礼貌间隔，OpenAlex 建议 <=10 req/s
+MAX_RETRIES = 5
 MAILTO = "polite@example.org"  # OpenAlex polite pool
 
 
@@ -35,6 +37,24 @@ def iso_months_ago(months: int) -> str:
     today = date.today()
     days = int(months * 30.44)
     return (today - timedelta(days=days)).isoformat()
+
+
+def _fetch_one(url: str) -> dict | None:
+    """单次 HTTP 请求，带重试。"""
+    req = Request(url, headers={"User-Agent": "top-journals-methods-scout/1.0"})
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            with urlopen(req, timeout=90) as resp:
+                raw = resp.read()
+            return json.loads(raw)
+        except (HTTPError, URLError, IncompleteRead, RemoteDisconnected,
+                TimeoutError, ConnectionError, json.JSONDecodeError) as e:
+            wait = min(2 ** attempt, 30)
+            print(f"    ! attempt {attempt}/{MAX_RETRIES} failed ({type(e).__name__}: "
+                  f"{str(e)[:80]}), retry in {wait}s", file=sys.stderr)
+            time.sleep(wait)
+    print(f"    ! giving up after {MAX_RETRIES} retries", file=sys.stderr)
+    return None
 
 
 def fetch_for_issn(issn_list: list[str], since: str) -> list[dict]:
@@ -55,12 +75,8 @@ def fetch_for_issn(issn_list: list[str], since: str) -> list[dict]:
             f"cited_by_count,concepts,topics"
         )
         url = f"{OPENALEX_API}?{params}"
-        req = Request(url, headers={"User-Agent": "top-journals-methods-scout/1.0"})
-        try:
-            with urlopen(req, timeout=60) as resp:
-                data = json.loads(resp.read())
-        except (HTTPError, URLError) as e:
-            print(f"  ! 请求失败 ({e}); ISSN={issn_list}", file=sys.stderr)
+        data = _fetch_one(url)
+        if data is None:
             return rows
         results = data.get("results", [])
         rows.extend(results)
